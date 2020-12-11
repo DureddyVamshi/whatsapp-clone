@@ -1,0 +1,174 @@
+/* Import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap');
+
+
+/* Variables */
+:root{
+    --background-green: #009688;
+    --background-beige: #d7dbd6;
+    --sidebar-header: #ededed;
+    --notifications-text-color: rgba(48, 48, 48, 0.96);
+    --notifications-link-color: rgba(48, 48, 48, 0.85);
+    --notifications-background-color: #9de1fe;
+    --search-bar-bg: #f6f6f6;
+    --white: #ffffff;
+    --text-primary: #4a4a4a;
+    --text-gray: #919191;
+    --chat-border: #ededed;
+    --whatsapp-green: #3ccc2f;
+    --scrollbar-color: #cccccc;
+    --chat-window-scrollbar-color: #bab3ae;
+    --box-shadow-color: #d5d5d5;
+    --chat-hover-color: #f5f5f5;
+    --chat-active-color: #ebebeb;
+    --chat-window-beige: #e5ddd5;
+    --chat-message-seen: #4fc3f7;
+    --sender-message-green: #dcf8c6;
+    --type-message-bar: #f0f0f0;
+}
+
+/* Overwrite browser default styles */
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    outline: 0px;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--text-primary);
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Overwrite bootstrap styles */
+.shadow{
+    box-shadow: 0 0 0.3rem rgba(0,0,0,.1)!important;
+}
+
+/* Background style */
+.main_wrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.main_wrapper::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 14%;
+    background-color: var(--background-green);
+}
+.main_wrapper::after{
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 86%;
+    background-color: var(--background-beige);
+}
+.wrapper_box{
+    width: 100%;
+    max-width: 1400px;
+    margin: 1em auto;
+    height: calc(100vh - 2em);
+    position: relative;
+    z-index: 1;
+}
+
+/* left side navigation */
+.left_side_navigation{
+    height: 100%;
+    width: 30%;
+    background-color: #fff;
+    float: left;
+}
+.left_side_navigation .sidebar_header{
+    background-color: var(--sidebar-header);
+    padding: 0.6em 1em;
+}
+.left_side_navigation .sidebar_header_img_avatar img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.left_side_navigation .sidebar_header_icons span{
+    color: var(--text-gray);
+    padding:0.5em;
+    margin-right: 0.7em;
+}
+.left_side_navigation .sidebar_header_icons span:last-child{
+    margin-right: 0px;
+}
+
+/* left Sidebar Search */
+.left_side_navigation .sidebar_search{
+    background-color: var(--search-bar-bg);
+    padding: 0.5em 0.7em;
+}
+.left_side_navigation .sidebar_search > div{
+    background-color: var(--white);
+    padding: 0.3em 0.5em;
+    border-radius: 3em;
+    color: var(--text-gray);
+}
+.left_side_navigation .sidebar_search input{
+    padding-left: 2em;
+    height: 100%;
+}
+.left_side_navigation .sidebar_search input::placeholder{
+    color: var(--text-gray);
+    font-size: 0.9em;
+}
+
+/* Left Sidebar Users List */
+.left_side_navigation .sidebar_body .user_avatar img{
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+.left_side_navigation .sidebar_body li{
+    padding: 0em 0.8em;
+    transition: 0.3s;
+}
+.left_side_navigation .sidebar_body li:hover{
+    background-color: var(--chat-hover-color);
+    cursor: pointer;
+}
+.left_side_navigation .sidebar_body li.active{
+    background-color: var(--chat-active-color);
+}
+.left_side_navigation .sidebar_body .user_intro{
+    border-bottom:1px solid var(--chat-border);
+    padding:0.8em 0px;
+}
+.left_side_navigation .sidebar_body .user_intro .seen{
+    color: var(--chat-message-seen);
+}
+.left_side_navigation .sidebar_body .user_intro small{
+    font-size: 0.95em;
+}
+.left_side_navigation .sidebar_body .user_intro h6{
+    margin: 0px;
+    font-weight: 600;
+}
+
+/* Right side navigation */
+.right_side_navigation{
+    height: 100%;
+    width: 70%;
+    background-color: rgb(119, 50, 50);
+    float: left;
+}
